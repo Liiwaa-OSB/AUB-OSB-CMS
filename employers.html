@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Career Management Services for employers: recruit AUB students and graduates, post jobs and internships, join career fairs, build partnerships, and connect with OSB talent.">
+    <title>Employers | Career Management Services | AUB</title>
+    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer="" src="js/menu.js"></script>
+
+    <style>
+        /* Engage cards */
+        .engage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 36px;
+        }
+
+        .engage-card {
+            padding: 26px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-line);
+            border-top: 3px solid var(--color-primary);
+        }
+
+        .engage-card__title {
+            font-size: 1.15rem;
+            font-weight: 500;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .engage-card__text {
+            font-size: .92rem;
+            color: var(--color-body-text);
+        }
+
+        /* Career fair */
+        .career-fair {
+            display: grid;
+            grid-template-columns: 5fr 6fr;
+            gap: 56px;
+            align-items: start;
+        }
+
+        .career-fair__media {
+            aspect-ratio: 4 / 3;
+        }
+
+        .career-fair__actions {
+            margin-top: 28px;
+        }
+
+        /* Program list */
+        .program-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 64px;
+            margin-top: 36px;
+            border-top: 1px solid var(--color-ink);
+        }
+
+        .program-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--color-line);
+        }
+
+        .program-item__name {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--color-ink);
+        }
+
+        /* Reach & engagement */
+        .reach-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 36px;
+        }
+
+        .reach-card {
+            padding: 26px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-line);
+            border-top: 3px solid var(--color-primary);
+        }
+
+        .reach-card__value {
+            font-size: clamp(2rem, 3.4vw, 2.6rem);
+            font-weight: 900;
+            line-height: 1;
+            letter-spacing: -.04em;
+            color: var(--color-primary);
+        }
+
+        .reach-card__label {
+            margin-top: 10px;
+            font-size: .95rem;
+            color: var(--color-body-text);
+        }
+
+        .employers-note {
+            margin-top: 20px;
+            font-size: .82rem;
+            font-style: italic;
+            color: var(--color-muted);
+        }
+
+        /* Contact split */
+        .employers-contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+        }
+
+        .employers-contact__title {
+            margin-bottom: 18px;
+            font-size: var(--fs-heading-md);
+            font-weight: 300;
+            letter-spacing: -.03em;
+        }
+
+        .employers-contact__copy {
+            max-width: 520px;
+            color: var(--color-body-text);
+        }
+
+        /* Contact details rows: employers uses a tighter term column */
+        .contact-details {
+            align-self: center;
+        }
+
+        .contact-details__row {
+            grid-template-columns: 180px 1fr;
+            padding: 14px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .engage-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .career-fair {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .reach-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .employers-contact {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .contact-details {
+                align-self: start;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .program-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .engage-grid,
+            .reach-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-main-header">
+        <div class="nav-main-container">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                </a>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-osb-links" aria-label="Main navigation">
+                <ul class="osb-nav">
+                    <li class="osb-nav-item">
+                        <a href="./index.html" id="home-link">Home</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./students.html" id="students-link">Students</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./alumni.html" id="alumni-link">Alumni</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./employers.html" id="employers-link">Employers</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./partners.html" id="partners-link">Partners</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./mentorship.html" id="mentorship-link">Mentorship</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./events.html" id="events-link">Events</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./resources.html" id="resources-link">Resources</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./contact.html" id="contact-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
+                aria-controls="mobileOverlay" aria-expanded="false">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
+        aria-hidden="true" inert>
+        <div class="mobile-overlay-content">
+
+            <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="./index.html">Home</a></li>
+                    <li><a class="mobile-nav-link" href="./students.html">Student</a></li>
+                    <li><a class="mobile-nav-link" href="./alumni.html">Alumni</a></li>
+                    <li><a class="mobile-nav-link" href="./employers.html">Employers</a></li>
+                    <li><a class="mobile-nav-link" href="./partners.html">Partners</a></li>
+                    <li><a class="mobile-nav-link" href="./mentorship.html">Mentorship</a></li>
+                    <li><a class="mobile-nav-link" href="./events.html">Events</a></li>
+                    <li><a class="mobile-nav-link" href="./resources.html">Resources</a></li>
+                    <li><a class="mobile-nav-link" href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <main>
+        <!-- ================= Hero (shared component) ================= -->
+        <section class="hero hero--compact">
+            <div class="hero__media">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=2200&q=85"
+                    alt="" role="presentation">
+            </div>
+            <div class="container hero__content">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current">Employers</span>
+                </nav>
+
+                <h1 class="hero__title">Career Management Services <strong>for Employers</strong></h1>
+                <p class="hero__subtitle">Discover meaningful opportunities to engage with our students and graduates,
+                    connect with emerging talent, and build partnerships that support your organization's talent needs.
+                </p>
+                <p class="hero__subtitle">Explore the programs and services we offer, register as an employer, and
+                    connect with the next generation of professionals as they begin their journey toward career
+                    development.</p>
+
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#">Register on the Career Portal</a>
+                    <a class="btn btn--ghost" href="#">Employer Engagement Form</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Recruit ================= -->
+        <section class="section" id="recruit">
+            <div class="container">
+                <p class="employers-block__eyebrow">Hire OSB talent</p>
+
+                <section class="employers-block">
+                    <p class="employers-block__eyebrow">Recruit and share opportunities</p>
+                    <h2 class="employers-block__title">Recruit Our Students &amp; Graduates</h2>
+                    <p class="employers-block__intro">Connect with talented fresh graduates and experienced alumni
+                        through recruitment presentations and employer engagement opportunities.</p>
+
+                    <div class="employers-block__actions">
+                        <a class="cta-link" href="mailto:osbcareers@aub.edu.lb">Contact us —
+                            osbcareers@aub.edu.lb</a>
+                    </div>
+                </section>
+
+                <section class="employers-block" id="post-jobs">
+                    <h2 class="employers-block__title">Post Jobs &amp; Internships</h2>
+                    <p class="employers-block__intro">Register as an employer to share internship, graduate, and
+                        full-time opportunities with our students and graduates.</p>
+                    <p class="employers-block__intro" style="margin-top:16px">Have a vacancy or internship you would
+                        like us to promote? Send your opportunity and let us help you reach the right students and
+                        graduates.</p>
+
+                    <div class="employers-block__actions">
+                        <a class="btn" href="#">Career Portal</a>
+                        <a class="cta-link" href="#">Send your opportunity →</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- ================= Connect with Students ================= -->
+        <section class="section section--muted" id="connect-with-students">
+            <div class="container">
+                <p class="employers-block__eyebrow">Employer engagement</p>
+                <h2 class="employers-block__title">Connect with Students</h2>
+                <p class="employers-block__intro">Engage directly with our students through career fairs, career talks,
+                    workshops, and campus visits.</p>
+
+                <div class="employers-block__actions">
+                    <a class="btn" href="#">Employer Engagement Form – Fill out form</a>
+                </div>
+
+                <div class="engage-grid">
+                    <article class="engage-card">
+                        <h3 class="engage-card__title">Career fairs</h3>
+                        <p class="engage-card__text">[Format details – TBC]</p>
+                    </article>
+
+                    <article class="engage-card">
+                        <h3 class="engage-card__title">Career talks</h3>
+                        <p class="engage-card__text">[Format details – TBC]</p>
+                    </article>
+
+                    <article class="engage-card">
+                        <h3 class="engage-card__title">Workshops</h3>
+                        <p class="engage-card__text">[Format details – TBC]</p>
+                    </article>
+
+                    <article class="engage-card">
+                        <h3 class="engage-card__title">Campus visits</h3>
+                        <p class="engage-card__text">[Format details – TBC]</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Career fair ================= -->
+        <section class="section" id="career-fair">
+            <div class="container">
+                <p class="employers-block__eyebrow">Career fair</p>
+                <h2 class="employers-block__title">OSB Career Fair</h2>
+                <p class="employers-block__intro">[Current / Upcoming Career Fair Information – TBC]</p>
+
+                <div class="career-fair" style="margin-top:44px">
+                    <figure class="media-frame career-fair__media">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=85"
+                            alt="Employers meeting students at a career fair">
+                    </figure>
+
+                    <div>
+                        <dl class="detail-list">
+                            <div class="detail-row">
+                                <dt>Date</dt>
+                                <dd>[TBC]</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt>Location</dt>
+                                <dd>[TBC]</dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt>Employer registration</dt>
+                                <dd>
+                                    [TBC]
+                                    <span class="detail-note">[Registration deadline – TBC]</span>
+                                </dd>
+                            </div>
+                            <div class="detail-row">
+                                <dt>Participation</dt>
+                                <dd>
+                                    [TBC]
+                                    <span class="detail-note">[Booth / format details – TBC]</span>
+                                </dd>
+                            </div>
+                        </dl>
+
+                        <div class="career-fair__actions">
+                            <a class="cta-link" href="#">Register for the Career Fair</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Partnerships ================= -->
+        <section class="section section--muted" id="partnerships">
+            <div class="container">
+                <div class="split">
+                    <div>
+                        <p class="employers-block__eyebrow">Partnerships</p>
+                        <h2 class="employers-block__title">Build Employer Partnerships</h2>
+                        <p class="employers-block__intro">Collaborate with the university to create internships,
+                            experiential learning, and other initiatives that connect students with future career
+                            opportunities.</p>
+
+                        <div class="employers-block__actions">
+                            <a class="btn" href="#">Employer Engagement Form – Fill out form</a>
+                            <a class="cta-link" href="./partners.html">Partner With CMS →</a>
+                        </div>
+
+                        <p class="employers-note">To confirm: keep under Employers or lead into the Partners page</p>
+                    </div>
+
+                    <figure class="media-frame split__media">
+                        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85"
+                            alt="Employer and university partner meeting">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Academic programs ================= -->
+        <section class="section" id="programs">
+            <div class="container">
+                <p class="employers-block__eyebrow">Our talent</p>
+                <h2 class="employers-block__title">Explore Our Academic Programs</h2>
+                <p class="employers-block__intro">Explore our academic programs and discover the diverse talent,
+                    skills, and expertise our students bring.</p>
+
+                <ul class="program-list">
+                    <li class="program-item">
+                        <span class="program-item__name">BBA</span>
+                        <a class="cta-link" href="#">Visit program page →</a>
+                    </li>
+                    <li class="program-item">
+                        <span class="program-item__name">MBA</span>
+                        <a class="cta-link" href="#">Visit program page →</a>
+                    </li>
+                    <li class="program-item">
+                        <span class="program-item__name">Executive MBA</span>
+                        <a class="cta-link" href="#">Visit program page →</a>
+                    </li>
+                    <li class="program-item">
+                        <span class="program-item__name">Master's in Human Resource Management</span>
+                        <a class="cta-link" href="#">Visit program page →</a>
+                    </li>
+                    <li class="program-item">
+                        <span class="program-item__name">Master's in Finance</span>
+                        <a class="cta-link" href="#">Visit program page →</a>
+                    </li>
+                    <li class="program-item">
+                        <span class="program-item__name">Master's in Business Analytics</span>
+                        <a class="cta-link" href="#">Visit program page →</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ================= Reach & engagement ================= -->
+        <section class="section section--muted" id="reach">
+            <div class="container">
+                <p class="employers-block__eyebrow">Reach &amp; engagement</p>
+                <h2 class="employers-block__title">OSB talent reach</h2>
+                <p class="employers-block__intro">[Employer Statistics Introduction – TBC]</p>
+
+                <div class="reach-grid">
+                    <article class="reach-card">
+                        <p class="reach-card__value">—</p>
+                        <p class="reach-card__label">[Employer Statistic – TBC]</p>
+                    </article>
+                    <article class="reach-card">
+                        <p class="reach-card__value">—</p>
+                        <p class="reach-card__label">[Employer Statistic – TBC]</p>
+                    </article>
+                    <article class="reach-card">
+                        <p class="reach-card__value">—</p>
+                        <p class="reach-card__label">[Employer Statistic – TBC]</p>
+                    </article>
+                    <article class="reach-card">
+                        <p class="reach-card__value">—</p>
+                        <p class="reach-card__label">[Employer Statistic – TBC]</p>
+                    </article>
+                </div>
+
+                <h3 class="employers-block__title" style="margin-top:64px;font-size:var(--fs-heading-md)">Organizations
+                    working with CMS</h3>
+
+                <div class="logo-grid">
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                    <div class="logo-item">[Employer Logo]</div>
+                </div>
+
+                <p class="employers-note">Add existing employer logos, if these are intended to be shown</p>
+            </div>
+        </section>
+
+        <!-- ================= Contact ================= -->
+        <section class="section" id="contact">
+            <div class="container employers-contact">
+                <div>
+                    <p class="employers-block__eyebrow">Get in touch</p>
+                    <h2 class="employers-contact__title">Contact options for employers</h2>
+                    <p class="employers-contact__copy">[Employer Contact Copy – TBC]</p>
+
+                    <div class="employers-block__actions">
+                        <a class="btn" href="#">Employer inquiry / booking form</a>
+                    </div>
+                </div>
+
+                <dl class="contact-details">
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Employer relations — Email</dt>
+                        <dd class="contact-details__value"><a
+                                href="mailto:osbcareers@aub.edu.lb">osbcareers@aub.edu.lb</a></dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Engagement</dt>
+                        <dd class="contact-details__value"><a href="#">Employer Engagement Form</a></dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Post a job</dt>
+                        <dd class="contact-details__value"><a href="#">Career Portal</a></dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Contact person</dt>
+                        <dd class="contact-details__value">[Employer Relations Contact – TBC]</dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Phone</dt>
+                        <dd class="contact-details__value">[CMS Phone Number – TBC]</dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Best way to reach us</dt>
+                        <dd class="contact-details__value">[Preferred Contact Method for Employers – TBC]</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ================= Final CTA ================= -->
+        <section class="section section--brand">
+            <div class="container final-cta">
+                <div>
+                    <p class="final-cta__eyebrow">Employer?</p>
+                    <h2 class="final-cta__title">Connect with OSB students and graduates.</h2>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#recruit">Work With CMS</a>
+                    <a class="btn btn--ghost" href="mailto:osbcareers@aub.edu.lb">Email osbcareers@aub.edu.lb</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
+    <!-- do not remove this comment -->
+    <!-- <script src="https://www.aub.edu.lb/osb/AUB_OSB_shared_components/footer-load-V.js"></script> -->
+</body>
+
+</html>

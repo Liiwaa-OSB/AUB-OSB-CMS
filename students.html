@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Career Management Services for AUB students: personalized career support, resources, workshops, internships and jobs, mentorship, and alumni connections.">
+    <title>Students | Career Management Services | AUB</title>
+    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer="" src="js/menu.js"></script>
+
+    <style>
+        /* Contact card (maroon) */
+        .contact-card {
+            padding: 36px;
+            background: var(--color-primary-dark);
+            color: #fff;
+        }
+
+        .contact-card__title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .contact-card__hint {
+            font-size: .85rem;
+            color: var(--color-primary-soft);
+            margin-bottom: 18px;
+        }
+
+        .contact-card__list {
+            margin: 0;
+        }
+
+        .contact-card__row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: .92rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .22);
+        }
+
+        .contact-card__row:last-child {
+            border-bottom: 0;
+        }
+
+        .contact-card__row dt {
+            font-weight: 700;
+            color: var(--color-primary-soft);
+        }
+
+        .contact-card__row dd {
+            margin: 0;
+        }
+
+        .contact-card__row dd a {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        /* Resource grid + card modifiers (unique to this page) */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .resource-card__index {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            color: var(--color-primary);
+        }
+
+        .resource-card__note {
+            font-size: .78rem;
+            color: var(--color-muted);
+            font-style: italic;
+        }
+
+        .resource-card__link {
+            margin-top: auto;
+            align-self: flex-start;
+            padding-top: 8px;
+        }
+
+        /* Mailing band */
+        .mailing {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 40px;
+            align-items: center;
+            padding: 40px;
+            background: var(--color-surface-muted);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mailing {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 28px;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .contact-card {
+                padding: 26px;
+            }
+
+            .contact-card__row {
+                grid-template-columns: 1fr;
+                gap: 2px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-main-header">
+        <div class="nav-main-container">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                </a>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-osb-links" aria-label="Main navigation">
+                <ul class="osb-nav">
+                    <li class="osb-nav-item">
+                        <a href="./index.html" id="home-link">Home</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./students.html" id="students-link">Students</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./alumni.html" id="alumni-link">Alumni</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./employers.html" id="employers-link">Employers</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./partners.html" id="partners-link">Partners</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./mentorship.html" id="mentorship-link">Mentorship</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./events.html" id="events-link">Events</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./resources.html" id="resources-link">Resources</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./contact.html" id="contact-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
+                aria-controls="mobileOverlay" aria-expanded="false">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
+        aria-hidden="true" inert>
+        <div class="mobile-overlay-content">
+
+            <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="./index.html">Home</a></li>
+                    <li><a class="mobile-nav-link" href="./students.html">Student</a></li>
+                    <li><a class="mobile-nav-link" href="./alumni.html">Alumni</a></li>
+                    <li><a class="mobile-nav-link" href="./employers.html">Employers</a></li>
+                    <li><a class="mobile-nav-link" href="./partners.html">Partners</a></li>
+                    <li><a class="mobile-nav-link" href="./mentorship.html">Mentorship</a></li>
+                    <li><a class="mobile-nav-link" href="./events.html">Events</a></li>
+                    <li><a class="mobile-nav-link" href="./resources.html">Resources</a></li>
+                    <li><a class="mobile-nav-link" href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <main>
+        <!-- ================= Hero (shared component) ================= -->
+        <section class="hero hero--compact">
+            <div class="hero__media">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2200&q=85"
+                    alt="" role="presentation">
+            </div>
+            <div class="container hero__content">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current">Students</span>
+                </nav>
+
+                <h1 class="hero__title">Career Management Services <strong>for Students</strong></h1>
+                <p class="hero__subtitle">Explore valuable opportunities to gain real-world experience, build your
+                    professional skills, and prepare for your future career.</p>
+
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#career-support">Book an Appointment</a>
+                    <a class="btn btn--ghost" href="#resources">Career Portal</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Main content ================= -->
+        <section class="section">
+            <div class="container students-content">
+
+                <!-- One-on-one -->
+                <section class="students-block" id="career-support">
+                    <p class="students-block__eyebrow">One-on-one</p>
+                    <h2 class="students-block__title">Get Personalized Career Support</h2>
+                    <p class="students-block__intro">Connect with the Career Team for one-on-one guidance, career
+                        advice, career counseling, and support tailored to your goals.</p>
+
+                    <div class="students-block__actions">
+                        <a class="btn" href="#">Book an Appointment</a>
+                        <a class="cta-link" href="#">Meet the Team →</a>
+                    </div>
+
+                    <div style="margin-top:44px">
+                        <div class="contact-card">
+                            <h3 class="contact-card__title">Contact Us</h3>
+                            <p class="contact-card__hint">Reach the Career Team directly for quick questions and
+                                scheduling.</p>
+                            <dl class="contact-card__list">
+                                <div class="contact-card__row">
+                                    <dt>Email</dt>
+                                    <dd><a href="mailto:osbcareers@aub.edu.lb">osbcareers@aub.edu.lb</a></dd>
+                                </div>
+                                <div class="contact-card__row">
+                                    <dt>Phone</dt>
+                                    <dd>[CMS Phone Number – TBC]</dd>
+                                </div>
+                                <div class="contact-card__row">
+                                    <dt>Office</dt>
+                                    <dd>[CMS Office Location – TBC]</dd>
+                                </div>
+                                <div class="contact-card__row">
+                                    <dt>Office hours</dt>
+                                    <dd>[Office Hours – TBC]</dd>
+                                </div>
+                                <div class="contact-card__row">
+                                    <dt>Best way to reach us</dt>
+                                    <dd>[Preferred Contact Method for Students – TBC]</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Prepare & apply -->
+                <section class="students-block" id="prepare">
+                    <p class="students-block__eyebrow">Prepare &amp; apply</p>
+                    <h2 class="students-block__title">Build your career, step by step</h2>
+
+                    <div class="resource-grid">
+                        <article class="resource-card" id="resources">
+                            <span class="resource-card__index">01</span>
+                            <h3 class="resource-card__title">Explore Career Resources</h3>
+                            <p class="resource-card__text">Access tools, guides, and resources designed to help you
+                                prepare for your career, from CVs and interviews to job searching and professional
+                                development.</p>
+                            <a class="cta-link resource-card__link" href="#">Career Resources</a>
+                        </article>
+
+                        <article class="resource-card" id="workshops">
+                            <span class="resource-card__index">02</span>
+                            <h3 class="resource-card__title">Build Your Career Skills</h3>
+                            <p class="resource-card__text">Take your career skills to the next level through
+                                interactive workshops designed for real-world success.</p>
+                            <a class="cta-link resource-card__link" href="#">Events &amp; Workshops</a>
+                        </article>
+
+                        <article class="resource-card" id="internships">
+                            <span class="resource-card__index">03</span>
+                            <h3 class="resource-card__title">Find Internship Opportunities</h3>
+                            <p class="resource-card__text">Discover available internships and gain valuable experience
+                                while building your skills and expanding your professional network.</p>
+                            <p class="resource-card__note">Confirm this is the final live source for internship
+                                opportunities – TBC</p>
+                            <a class="cta-link resource-card__link" href="#">View internships
+                                (Jobs-Internships.xlsx)</a>
+                        </article>
+
+                        <article class="resource-card" id="jobs">
+                            <span class="resource-card__index">04</span>
+                            <h3 class="resource-card__title">Explore Full-Time Opportunities</h3>
+                            <p class="resource-card__text">Browse current job opportunities and take the next step
+                                toward launching your career after graduation.</p>
+                            <a class="cta-link resource-card__link" href="#">Career Portal</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Mentorship -->
+                <section class="students-block" id="mentorship">
+                    <div class="split">
+                        <figure class="media-frame split__media">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=85"
+                                alt="Student and alumni mentor in conversation">
+                        </figure>
+
+                        <div>
+                            <p class="students-block__eyebrow">Mentorship</p>
+                            <h2 class="students-block__title">Connect with a Mentor</h2>
+                            <p class="students-block__intro">Build meaningful professional connections and gain
+                                guidance from experienced mentors.</p>
+
+                            <div class="students-block__actions">
+                                <a class="btn" href="#">Fill out Mentee Form</a>
+                                <a class="cta-link" href="#">About the OSB Graduate Mentorship Program →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Mailing list -->
+                <section class="students-block" id="mailing-list">
+                    <div class="mailing">
+                        <div>
+                            <p class="students-block__eyebrow">Stay informed</p>
+                            <h2 class="students-block__title" style="margin-bottom:10px">Join Our Mailing List</h2>
+                            <p class="students-block__intro" style="font-size:.98rem">Subscribe to our mailing list to
+                                receive the latest career opportunities, resources, events, and updates from the Career
+                                Team.</p>
+                        </div>
+                        <a class="btn" href="#">Join our Mailing List</a>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- ================= Testimonials ================= -->
+        <section class="section section--muted" id="testimonials">
+            <div class="container">
+                <header class="section-heading">
+                    <h2 class="section-heading__title">In their words</h2>
+                    <p class="section-heading__intro">Student testimonials from the AUB career community.</p>
+                </header>
+
+                <div class="testimonial-list">
+                    <article class="testimonial">
+                        <figure class="media-frame testimonial__media">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80"
+                                alt="Student portrait">
+                        </figure>
+                        <div>
+                            <p class="testimonial__name">[Student Name]</p>
+                            <p class="testimonial__role">[Program · Year]</p>
+                            <blockquote class="testimonial__quote">[Student Testimonial – TBC]</blockquote>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <figure class="media-frame testimonial__media">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
+                                alt="Student portrait">
+                        </figure>
+                        <div>
+                            <p class="testimonial__name">[Student Name]</p>
+                            <p class="testimonial__role">[Program · Year]</p>
+                            <blockquote class="testimonial__quote">[Student Testimonial – TBC]</blockquote>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <figure class="media-frame testimonial__media">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
+                                alt="Student portrait">
+                        </figure>
+                        <div>
+                            <p class="testimonial__name">[Student Name]</p>
+                            <p class="testimonial__role">[Program · Year]</p>
+                            <blockquote class="testimonial__quote">[Student Testimonial – TBC]</blockquote>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FAQs ================= -->
+        <section class="section" id="faqs">
+            <div class="container">
+                <header class="section-heading">
+                    <h2 class="section-heading__title">Questions</h2>
+                    <p class="section-heading__intro">Answers to the questions students ask us most often.</p>
+                </header>
+
+                <div class="faq-list">
+                    <details class="faq" open>
+                        <summary class="faq__question">How do I find an internship?</summary>
+                        <div class="faq__answer">
+                            <p>Start by exploring internship opportunities through the university's career portal,
+                                career fairs, employer events, and networking opportunities. You can also speak with a
+                                career advisor who can help you identify suitable opportunities and guide you through
+                                the application process.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">When can I apply for an internship?</summary>
+                        <div class="faq__answer">
+                            <p>You can start looking for internships as early as your first or second year of study.
+                                Many employers recruit several months before the internship begins, so it's a good idea
+                                to start your search early and check application deadlines regularly.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">What if I don't know what career I want?</summary>
+                        <div class="faq__answer">
+                            <p>That's completely normal. Career advisors can help you explore your interests, skills,
+                                values, and career options. Through career assessments, one-on-one guidance, workshops,
+                                and conversations with professionals and alumni, you can gain a better understanding of
+                                the paths that may be right for you.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">How can I make my CV stand out?</summary>
+                        <div class="faq__answer">
+                            <p>Tailor your CV to each position by highlighting relevant skills and experiences. Use the
+                                resources on our website for guidance or book an appointment with a career advisor for
+                                personalized support.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">How do I get ready for my first interview?</summary>
+                        <div class="faq__answer">
+                            <p>Research the organization and role, practice common interview questions, and book a mock
+                                interview with a career advisor to build confidence.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">Where can I find job opportunities?</summary>
+                        <div class="faq__answer">
+                            <p>Find job opportunities through the university's career portal, career fairs, employer
+                                events, company websites, and alumni network. You can also join our mailing list to
+                                receive the latest opportunities and career updates.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">How can I connect with employers and alumni?</summary>
+                        <div class="faq__answer">
+                            <p>Attend career fairs, employer events, and networking opportunities, and connect with
+                                alumni through the university's network. Career Services can help you build meaningful
+                                connections.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">Can I get career support after graduation?</summary>
+                        <div class="faq__answer">
+                            <p>Yes! Alumni can continue to access career support and benefit from the OSB Graduate
+                                Mentorship Program. Contact us to learn more about the resources available to you.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">How can I build my professional network?</summary>
+                        <div class="faq__answer">
+                            <p>Start building your network by attending events, connecting with alumni and
+                                professionals, and maintaining relationships with your industry connections.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">How can I connect with alumni working in my field of interest?
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Explore our Alumni section to discover graduates working in industries and roles that
+                                interest you. You can also connect with alumni through the OSB Graduate Mentorship
+                                Program to gain career insights and advice.</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">How can I discover the career path that is right for me?
+                        </summary>
+                        <div class="faq__answer">
+                            <p>Start by exploring your interests, strengths, values, and goals. Try different
+                                experiences through internships, part-time jobs, volunteering, student activities, and
+                                career events. Speaking with career advisors, professors, and alumni can also help you
+                                understand different career paths and make informed decisions.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Final CTA ================= -->
+        <section class="section section--brand">
+            <div class="container final-cta">
+                <div>
+                    <p class="final-cta__eyebrow">Student?</p>
+                    <h2 class="final-cta__title">Get support with your career journey.</h2>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#career-support">Book an Appointment</a>
+                    <a class="btn btn--ghost" href="mailto:osbcareers@aub.edu.lb">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
+    <!-- do not remove this comment -->
+    <!-- <script src="https://www.aub.edu.lb/osb/AUB_OSB_shared_components/footer-load-V.js"></script> -->
+
+    <!-- FAQ accordion: only one item open at a time -->
+    <script>
+        (function () {
+            var faqs = document.querySelectorAll('.faq-list .faq');
+
+            faqs.forEach(function (faq) {
+                faq.addEventListener('toggle', function () {
+                    if (!faq.open) return;
+                    faqs.forEach(function (other) {
+                        if (other !== faq) other.open = false;
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

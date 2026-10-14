@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="The OSB Graduate Mentorship Program pairs current students with alumni through a curated one-on-one matching process based on shared industry interests, career goals, and professional backgrounds.">
+    <title>OSB Graduate Mentorship Program | Career Management Services | AUB</title>
+    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer="" src="js/menu.js"></script>
+    <script defer="" src="js/main.js"></script>
+
+    <style>
+        /* Apply cards */
+        .apply-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .apply-card {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 40px;
+            background: var(--color-surface);
+            border: 1px solid var(--color-line);
+            border-top: 3px solid var(--color-primary);
+        }
+
+        .apply-card--brand {
+            background: var(--color-primary-dark);
+            border-color: var(--color-primary-dark);
+            border-top-color: var(--color-primary-tint);
+            color: #fff;
+        }
+
+        .apply-card__title {
+            font-size: 1.5rem;
+            font-weight: 300;
+            line-height: 1.15;
+            letter-spacing: -.02em;
+        }
+
+        .apply-card__text {
+            font-size: .98rem;
+            color: var(--color-body-text);
+        }
+
+        .apply-card--brand .apply-card__text {
+            color: var(--color-primary-soft);
+        }
+
+        .apply-card__subhead {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        .apply-card--brand .apply-card__subhead {
+            color: var(--color-primary-tint);
+        }
+
+        .apply-card__eligibility {
+            font-size: .95rem;
+            color: var(--color-body-text);
+        }
+
+        .apply-card--brand .apply-card__eligibility {
+            color: var(--color-on-dark-soft);
+        }
+
+        .apply-card__actions {
+            margin-top: auto;
+            padding-top: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .apply-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .apply-card {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-main-header">
+        <div class="nav-main-container">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                </a>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-osb-links" aria-label="Main navigation">
+                <ul class="osb-nav">
+                    <li class="osb-nav-item">
+                        <a href="./index.html" id="home-link">Home</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./students.html" id="students-link">Students</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./alumni.html" id="alumni-link">Alumni</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./employers.html" id="employers-link">Employers</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./partners.html" id="partners-link">Partners</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./mentorship.html" id="mentorship-link">Mentorship</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./events.html" id="events-link">Events</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./resources.html" id="resources-link">Resources</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./contact.html" id="contact-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
+                aria-controls="mobileOverlay" aria-expanded="false">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
+        aria-hidden="true" inert>
+        <div class="mobile-overlay-content">
+
+            <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="./index.html">Home</a></li>
+                    <li><a class="mobile-nav-link" href="./students.html">Student</a></li>
+                    <li><a class="mobile-nav-link" href="./alumni.html">Alumni</a></li>
+                    <li><a class="mobile-nav-link" href="./employers.html">Employers</a></li>
+                    <li><a class="mobile-nav-link" href="./partners.html">Partners</a></li>
+                    <li><a class="mobile-nav-link" href="./mentorship.html">Mentorship</a></li>
+                    <li><a class="mobile-nav-link" href="./events.html">Events</a></li>
+                    <li><a class="mobile-nav-link" href="./resources.html">Resources</a></li>
+                    <li><a class="mobile-nav-link" href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <main>
+        <!-- ================= Hero (shared component) ================= -->
+        <section class="hero hero--compact">
+            <div class="hero__media">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2200&q=85"
+                    alt="" role="presentation">
+            </div>
+            <div class="container hero__content">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current">Mentorship</span>
+                </nav>
+
+                <h1 class="hero__title">OSB Graduate <strong>Mentorship Program</strong></h1>
+                <p class="hero__subtitle">The OSB Graduate Mentorship Program pairs current students with alumni
+                    through a carefully curated, one on one matching process based on shared industry interests,
+                    career goals, and professional backgrounds.</p>
+
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#for-alumni">Apply as a Mentor</a>
+                    <a class="btn btn--ghost" href="#for-students">Apply as a Mentee</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Program overview ================= -->
+        <section class="section" id="overview">
+            <div class="container">
+                <div class="split">
+                    <div>
+                        <p class="content-block__eyebrow">Program overview</p>
+                        <h2 class="content-block__title">Real career questions, answered together</h2>
+                        <p class="content-block__intro">Throughout the program, mentors and mentees meet regularly to
+                            navigate real career questions, from making career decisions to understanding the unwritten
+                            rules of the industries they aspire to enter.</p>
+                    </div>
+
+                    <figure class="media-frame split__media">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=85"
+                            alt="Mentor and mentee in a mentoring session">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= At a glance ================= -->
+        <section class="section section--muted" id="key-details">
+            <div class="container">
+                <p class="content-block__eyebrow">At a glance</p>
+                <h2 class="content-block__title">Key program details</h2>
+
+                <dl class="detail-list">
+                    <div class="detail-row">
+                        <dt>Program cycle</dt>
+                        <dd>[Mentorship Program Dates – TBC]</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Application period</dt>
+                        <dd>[Opening – Closing Dates – TBC]</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Duration</dt>
+                        <dd>[Program Duration – TBC]</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Time commitment</dt>
+                        <dd>[Mentor / Mentee Commitment – TBC]</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Meeting frequency</dt>
+                        <dd>[Number / Frequency of Meetings – TBC]</dd>
+                    </div>
+                    <div class="detail-row">
+                        <dt>Orientation</dt>
+                        <dd>[Orientation / Onboarding – TBC]</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ================= For Alumni / For Students ================= -->
+        <section class="section" id="for-alumni">
+            <div class="container">
+                <div class="apply-grid">
+                    <article class="apply-card">
+                        <p class="content-block__eyebrow">Mentors</p>
+                        <h2 class="apply-card__title">For Alumni</h2>
+                        <p class="apply-card__text">As an OSB alumnus, your professional experience is a valuable
+                            resource for the next generation of business leaders. By joining the OSB Graduate
+                            Mentorship Program as a mentor, you will guide ambitious students, share the insights that
+                            shaped your own career, and contribute to developing business talent across the region and
+                            beyond, all while expanding your professional network and strengthening your leadership
+                            capabilities.</p>
+
+                        <p class="apply-card__subhead">Mentor eligibility</p>
+                        <p class="apply-card__eligibility">[Eligibility for Alumni / Mentors – TBC]</p>
+
+                        <div class="apply-card__actions">
+                            <p class="apply-card__text" style="margin-bottom:14px">To apply complete the following
+                                form:</p>
+                            <a class="btn" href="#contact">Mentor Form – Fill out form</a>
+                        </div>
+                    </article>
+
+                    <article class="apply-card" id="for-students">
+                        <p class="content-block__eyebrow">Mentees</p>
+                        <h2 class="apply-card__title">For Students</h2>
+                        <p class="apply-card__text">The OSB Graduate Mentorship Program connects you with an alumnus
+                            positioned to support your professional development. Through structured, one on one
+                            mentorship, you will gain career clarity, industry insight, and constructive feedback,
+                            along with access to a professional network that extends well beyond graduation.</p>
+
+                        <p class="apply-card__subhead">Mentee eligibility</p>
+                        <p class="apply-card__eligibility">[Eligibility for Students / Mentees – TBC]</p>
+
+                        <div class="apply-card__actions">
+                            <p class="apply-card__text" style="margin-bottom:14px">To apply complete the following
+                                form:</p>
+                            <a class="btn" href="#contact">Mentee Form – Fill out form</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Program journey ================= -->
+        <section class="section section--muted" id="program-journey">
+            <div class="container">
+                <p class="content-block__eyebrow">How it works</p>
+                <h2 class="content-block__title">Program journey</h2>
+                <p class="content-block__intro">[Program Process / Timeline Details – TBC]</p>
+
+                <div class="steps">
+                    <article class="step">
+                        <span class="step__index">01</span>
+                        <div>
+                            <h3 class="step__title">Application</h3>
+                            <p class="step__text">[Application details &amp; dates – TBC]</p>
+                        </div>
+                    </article>
+
+                    <article class="step">
+                        <span class="step__index">02</span>
+                        <div>
+                            <h3 class="step__title">Matching</h3>
+                            <p class="step__text">[Matching details &amp; dates – TBC]</p>
+                        </div>
+                    </article>
+
+                    <article class="step">
+                        <span class="step__index">03</span>
+                        <div>
+                            <h3 class="step__title">Mentorship</h3>
+                            <p class="step__text">[Mentorship period details – TBC]</p>
+                        </div>
+                    </article>
+
+                    <article class="step">
+                        <span class="step__index">04</span>
+                        <div>
+                            <h3 class="step__title">Completion</h3>
+                            <p class="step__text">[Completion &amp; recognition details – TBC]</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Impact ================= -->
+        <section class="section" id="impact">
+            <div class="container">
+                <p class="content-block__eyebrow">Program impact</p>
+                <h2 class="content-block__title">The program in numbers</h2>
+
+                <div class="stat-card-grid" style="margin-top:36px">
+                    <article class="stat-card">
+                        <p class="stat-card__value">—</p>
+                        <p class="stat-card__label">Mentors</p>
+                        <p class="stat-card__note">[Impact Figure – TBC]</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <p class="stat-card__value">—</p>
+                        <p class="stat-card__label">Mentees</p>
+                        <p class="stat-card__note">[Impact Figure – TBC]</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <p class="stat-card__value">—</p>
+                        <p class="stat-card__label">Matches</p>
+                        <p class="stat-card__note">[Impact Figure – TBC]</p>
+                    </article>
+
+                    <article class="stat-card">
+                        <p class="stat-card__value">—</p>
+                        <p class="stat-card__label">Industries</p>
+                        <p class="stat-card__note">[Impact Figure – TBC]</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= FAQs ================= -->
+        <section class="section section--muted" id="faqs">
+            <div class="container">
+                <p class="content-block__eyebrow">Questions</p>
+                <h2 class="content-block__title">Mentorship FAQs</h2>
+
+                <div class="faq-list" style="margin-top:36px">
+                    <details class="faq" open>
+                        <summary class="faq__question">[Mentorship FAQ Question – TBC]</summary>
+                        <div class="faq__answer">
+                            <p>[Mentorship FAQ Answer – TBC]</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">[Mentorship FAQ Question – TBC]</summary>
+                        <div class="faq__answer">
+                            <p>[Mentorship FAQ Answer – TBC]</p>
+                        </div>
+                    </details>
+
+                    <details class="faq">
+                        <summary class="faq__question">[Mentorship FAQ Question – TBC]</summary>
+                        <div class="faq__answer">
+                            <p>[Mentorship FAQ Answer – TBC]</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Program contact ================= -->
+        <section class="section" id="contact">
+            <div class="container">
+                <p class="content-block__eyebrow">Program contact</p>
+                <h2 class="content-block__title">Get in touch with the program team</h2>
+
+                <dl class="contact-details">
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Contact person</dt>
+                        <dd class="contact-details__value">[Program Contact Name – TBC]</dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">Program email</dt>
+                        <dd class="contact-details__value">[Program Email – TBC]</dd>
+                    </div>
+                    <div class="contact-details__row">
+                        <dt class="contact-details__term">CMS email</dt>
+                        <dd class="contact-details__value"><a
+                                href="mailto:osbcareers@aub.edu.lb">osbcareers@aub.edu.lb</a></dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- ================= Final CTA ================= -->
+        <section class="section section--brand">
+            <div class="container final-cta">
+                <div>
+                    <p class="final-cta__eyebrow">Mentorship</p>
+                    <h2 class="final-cta__title">Join the OSB Graduate Mentorship Program</h2>
+                    <p class="final-cta__text">Apply as a mentor to guide the next generation, or as a mentee to gain
+                        career clarity and industry insight.</p>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#for-alumni">Apply as a Mentor</a>
+                    <a class="btn btn--ghost" href="#for-students">Apply as a Mentee</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
+    <!-- do not remove this comment -->
+    <!-- <script src="https://www.aub.edu.lb/osb/AUB_OSB_shared_components/footer-load-V.js"></script> -->
+</body>
+
+</html>

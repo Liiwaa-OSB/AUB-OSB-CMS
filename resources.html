@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CMS Career Resources: access tools, guides and templates for CVs, cover letters, interviews, LinkedIn, career planning and job searching.">
+    <title>Career Resources | Career Management Services | AUB</title>
+    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer="" src="js/menu.js"></script>
+
+    <style>
+        /* Subhead supporting line (resources only) */
+        .block-subhead__intro {
+            max-width: 620px;
+            font-size: .98rem;
+            color: var(--color-body-text);
+        }
+
+        /* Resource grid (page uses 3 cols) */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .resource-card__includes {
+            font-size: .85rem;
+            color: var(--color-body-text);
+            padding-top: 12px;
+            border-top: 1px solid var(--color-line);
+        }
+
+        .resource-card__includes-label {
+            display: block;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+
+        .resource-card__footer {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px 20px;
+            margin-top: auto;
+            padding-top: 16px;
+        }
+
+        .resource-card__type {
+            display: inline-block;
+            padding: 4px 12px;
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            background: var(--color-primary-soft);
+        }
+
+        /* Tools list */
+        .tools-list {
+            margin: 32px 0 0;
+            border-top: 1px solid var(--color-ink);
+        }
+
+        .tool-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 24px 40px;
+            align-items: center;
+            padding: 26px 0;
+            border-bottom: 1px solid var(--color-line);
+        }
+
+        .tool-row__title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: var(--color-ink);
+            margin-bottom: 4px;
+        }
+
+        .tool-row__text {
+            font-size: .93rem;
+            color: var(--color-body-text);
+        }
+
+        .tool-row__action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 12px;
+            text-align: right;
+        }
+
+        /* Personal support */
+        .support {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .support__media {
+            aspect-ratio: 4 / 3;
+        }
+
+        .support__actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .support {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .tool-row {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .tool-row__action {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nav-main-header">
+        <div class="nav-main-container">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                </a>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-osb-links" aria-label="Main navigation">
+                <ul class="osb-nav">
+                    <li class="osb-nav-item">
+                        <a href="./index.html" id="home-link">Home</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./students.html" id="students-link">Students</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./alumni.html" id="alumni-link">Alumni</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./employers.html" id="employers-link">Employers</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./partners.html" id="partners-link">Partners</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./mentorship.html" id="mentorship-link">Mentorship</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./events.html" id="events-link">Events</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./resources.html" id="resources-link">Resources</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./contact.html" id="contact-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
+                aria-controls="mobileOverlay" aria-expanded="false">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
+        aria-hidden="true" inert>
+        <div class="mobile-overlay-content">
+
+            <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="./index.html">Home</a></li>
+                    <li><a class="mobile-nav-link" href="./students.html">Student</a></li>
+                    <li><a class="mobile-nav-link" href="./alumni.html">Alumni</a></li>
+                    <li><a class="mobile-nav-link" href="./employers.html">Employers</a></li>
+                    <li><a class="mobile-nav-link" href="./partners.html">Partners</a></li>
+                    <li><a class="mobile-nav-link" href="./mentorship.html">Mentorship</a></li>
+                    <li><a class="mobile-nav-link" href="./events.html">Events</a></li>
+                    <li><a class="mobile-nav-link" href="./resources.html">Resources</a></li>
+                    <li><a class="mobile-nav-link" href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <main>
+        <!-- ================= Hero (shared component) ================= -->
+        <section class="hero hero--compact">
+            <div class="hero__media">
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=2200&q=85"
+                    alt="" role="presentation">
+            </div>
+            <div class="container hero__content">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current">Career Resources</span>
+                </nav>
+
+                <h1 class="hero__title">Career <strong>Resources</strong></h1>
+                <p class="hero__subtitle">Access tools, guides, and resources designed to help you prepare for your
+                    career, from CVs and interviews to job searching and professional development.</p>
+
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#library">Go to the Resource Library</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Resource Library ================= -->
+        <section class="section" id="library">
+            <div class="container">
+                <div class="content-block">
+                    <p class="content-block__eyebrow">Career Resources Library</p>
+                    <h2 class="content-block__title">Find and download CMS career resources</h2>
+                    <p class="content-block__intro">Every CMS guide, template and tool is here, organized by topic.</p>
+
+                    <h3 class="block-subhead">PDF &amp; templates</h3>
+                    <p class="block-subhead__intro">Guides and templates grouped by career topic.</p>
+
+                    <div class="resource-grid">
+                        <article class="resource-card">
+                            <h4 class="resource-card__title">CV / Resume Resources</h4>
+                            <p class="resource-card__text">[Resource Description – TBC]</p>
+                            <p class="resource-card__includes">
+                                <span class="resource-card__includes-label">Includes</span>
+                                Resume &amp; Cover Letter Guidance and Resources
+                            </p>
+                            <div class="resource-card__footer">
+                                <span class="resource-card__type">[Type – TBC]</span>
+                                <a class="cta-link" href="#">Download Resource</a>
+                            </div>
+                        </article>
+
+                        <article class="resource-card">
+                            <h4 class="resource-card__title">Cover Letter Resources</h4>
+                            <p class="resource-card__text">[Resource Description – TBC]</p>
+                            <p class="resource-card__includes">
+                                <span class="resource-card__includes-label">Includes</span>
+                                [Cover Letter Resource – TBC]
+                            </p>
+                            <div class="resource-card__footer">
+                                <span class="resource-card__type">[Type – TBC]</span>
+                                <a class="cta-link" href="#">Download Resource</a>
+                            </div>
+                        </article>
+
+                        <article class="resource-card">
+                            <h4 class="resource-card__title">Interview Guides</h4>
+                            <p class="resource-card__text">[Resource Description – TBC]</p>
+                            <p class="resource-card__includes">
+                                <span class="resource-card__includes-label">Includes</span>
+                                [Interview Guide – TBC]
+                            </p>
+                            <div class="resource-card__footer">
+                                <span class="resource-card__type">PDF</span>
+                                <a class="cta-link" href="#">Download Resource</a>
+                            </div>
+                        </article>
+
+                        <article class="resource-card">
+                            <h4 class="resource-card__title">LinkedIn Resources</h4>
+                            <p class="resource-card__text">[Resource Description – TBC]</p>
+                            <p class="resource-card__includes">
+                                <span class="resource-card__includes-label">Includes</span>
+                                LinkedIn Profile Tips
+                            </p>
+                            <div class="resource-card__footer">
+                                <span class="resource-card__type">[Type – TBC]</span>
+                                <a class="cta-link" href="#">Download Resource</a>
+                            </div>
+                        </article>
+
+                        <article class="resource-card">
+                            <h4 class="resource-card__title">Career Planning</h4>
+                            <p class="resource-card__text">[Resource Description – TBC]</p>
+                            <p class="resource-card__includes">
+                                <span class="resource-card__includes-label">Includes</span>
+                                [Career Planning Resource – TBC]
+                            </p>
+                            <div class="resource-card__footer">
+                                <span class="resource-card__type">[Type – TBC]</span>
+                                <a class="cta-link" href="#">View Resource</a>
+                            </div>
+                        </article>
+
+                        <article class="resource-card">
+                            <h4 class="resource-card__title">Job Search Resources</h4>
+                            <p class="resource-card__text">[Resource Description – TBC]</p>
+                            <p class="resource-card__includes">
+                                <span class="resource-card__includes-label">Includes</span>
+                                [Job Search Resource – TBC]
+                            </p>
+                            <div class="resource-card__footer">
+                                <span class="resource-card__type">[Type – TBC]</span>
+                                <a class="cta-link" href="#">View Resource</a>
+                            </div>
+                        </article>
+                    </div>
+
+                    <h3 class="block-subhead">Templates, Checklists &amp; Additional Tools</h3>
+                    <p class="block-subhead__intro">[Resource Description – TBC]</p>
+
+                    <ul class="tools-list">
+                        <li class="tool-row">
+                            <div>
+                                <h4 class="tool-row__title">[Template – TBC]</h4>
+                                <p class="tool-row__text">[Type – TBC]</p>
+                            </div>
+                            <div class="tool-row__action">
+                                <a class="cta-link" href="#">Download Resource</a>
+                            </div>
+                        </li>
+
+                        <li class="tool-row">
+                            <div>
+                                <h4 class="tool-row__title">[Checklist – TBC]</h4>
+                                <p class="tool-row__text">[Type – TBC]</p>
+                            </div>
+                            <div class="tool-row__action">
+                                <a class="cta-link" href="#">Download Resource</a>
+                            </div>
+                        </li>
+
+                        <li class="tool-row">
+                            <div>
+                                <h4 class="tool-row__title">[Additional Tool / Video – TBC]</h4>
+                                <p class="tool-row__text">[Type – TBC]</p>
+                            </div>
+                            <div class="tool-row__action">
+                                <a class="cta-link" href="#">View Resource</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Personal support ================= -->
+        <section class="section section--muted" id="support">
+            <div class="container">
+                <div class="support">
+                    <div>
+                        <p class="content-block__eyebrow">Personal support</p>
+                        <h2 class="content-block__title">Need personalized support?</h2>
+                        <p class="content-block__intro">Tailor your CV to each position by highlighting relevant skills
+                            and experiences. Use the resources on our website for guidance or book an appointment with a
+                            career advisor for personalized support.</p>
+
+                        <div class="support__actions">
+                            <a class="btn" href="#">Book an Appointment</a>
+                            <a class="cta-link" href="./events.html">Career skills workshops →</a>
+                        </div>
+                    </div>
+
+                    <figure class="media-frame support__media">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=85"
+                            alt="Career advisor meeting with a student">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Final CTA ================= -->
+        <section class="section section--brand" id="stay-informed">
+            <div class="container final-cta">
+                <div>
+                    <p class="final-cta__eyebrow">Get new resources first</p>
+                    <h2 class="final-cta__title">Subscribe to our mailing list</h2>
+                    <p class="final-cta__text">Subscribe to our mailing list to receive the latest career opportunities,
+                        resources, events, and updates from the Career Team.</p>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#">Join our Mailing List</a>
+                    <a class="btn btn--ghost" href="./contact.html">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
+    <!-- do not remove this comment -->
+    <!-- <script src="https://www.aub.edu.lb/osb/AUB_OSB_shared_components/footer-load-V.js"></script> -->
+</body>
+
+</html>

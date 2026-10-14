@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Career Management Services for AUB alumni: explore career opportunities, become a mentor, share your story, and access career support after graduation.">
+    <title>Alumni | Career Management Services | AUB</title>
+    <link href="images/logos/favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer="" src="js/menu.js"></script>
+
+    <style>
+  /* Journey cards */
+  .journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .journey-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--color-primary);
+  }
+
+  .journey-card__media { aspect-ratio: 4 / 3; }
+
+  .journey-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 10px;
+    padding: 24px;
+  }
+
+  .journey-card__name {
+    font-size: 1.15rem;
+    font-weight: 500;
+    line-height: 1.25;
+  }
+
+  .journey-card__role {
+    font-size: .85rem;
+    color: var(--color-muted);
+  }
+
+  .journey-card__text {
+    font-size: .95rem;
+    color: var(--color-body-text);
+  }
+
+  .journey-card__body .cta-link {
+    margin-top: auto;
+    align-self: flex-start;
+    padding-top: 8px;
+  }
+
+  .journey-footer { margin-top: 40px; }
+
+  /* Outcomes */
+  .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .outcome {
+    padding: 26px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-line);
+    border-top: 3px solid var(--color-primary);
+  }
+
+  .outcome__value {
+    font-size: clamp(2rem, 3.4vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--color-primary);
+  }
+
+  .outcome__label {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+
+  .outcome__note {
+    margin-top: 4px;
+    font-size: .78rem;
+    color: var(--color-muted);
+  }
+
+  /* Chart placeholder */
+  .chart-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 280px;
+    margin-top: 24px;
+    padding: 32px;
+    background: var(--color-surface-muted);
+    border: 1px dashed var(--color-line);
+    text-align: center;
+  }
+
+  .chart-placeholder__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-ink);
+  }
+
+  .chart-placeholder__caption {
+    font-size: .85rem;
+    color: var(--color-muted);
+  }
+
+  /* Responsive */
+  @media (max-width: 1000px) {
+    .journey-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .outcomes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 480px) {
+    .journey-grid { grid-template-columns: 1fr; }
+    .outcomes-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+
+<body>
+    <header class="nav-main-header">
+        <div class="nav-main-container">
+
+            <!-- LOGO -->
+            <div class="nav-logo">
+                <a href="./index.html">
+                    <img src="images/logos/AUB+OSB-Merged-Logo-white.png" alt="AUB OSB Logo" />
+                </a>
+            </div>
+
+            <!-- DESKTOP NAVIGATION -->
+            <nav class="nav-osb-links" aria-label="Main navigation">
+                <ul class="osb-nav">
+                    <li class="osb-nav-item">
+                        <a href="./index.html" id="home-link">Home</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./students.html" id="students-link">Students</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./alumni.html" id="alumni-link">Alumni</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./employers.html" id="employers-link">Employers</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./partners.html" id="partners-link">Partners</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./mentorship.html" id="mentorship-link">Mentorship</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./events.html" id="events-link">Events</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./resources.html" id="resources-link">Resources</a>
+                    </li>
+                    <li class="osb-nav-item">
+                        <a href="./contact.html" id="contact-link">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- MOBILE MENU BUTTON -->
+            <button class="mobile-burger-inline" id="mobileBurgerBtn" type="button" aria-label="Open menu"
+                aria-controls="mobileOverlay" aria-expanded="false">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+
+        </div>
+    </header>
+
+    <!-- MOBILE OVERLAY -->
+    <div class="mobile-overlay" id="mobileOverlay" role="dialog" aria-modal="true" aria-label="Main menu"
+        aria-hidden="true" inert>
+        <div class="mobile-overlay-content">
+
+            <button class="mobile-close" id="closeOverlayBtn" type="button" aria-label="Close menu">
+                <svg fill="none" height="28" width="28" viewBox="0 0 24 24" stroke="white" stroke-width="2"
+                    aria-hidden="true">
+                    <line x1="5" y1="5" x2="19" y2="19"></line>
+                    <line x1="19" y1="5" x2="5" y2="19"></line>
+                </svg>
+            </button>
+
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav">
+                    <li><a class="mobile-nav-link" href="./index.html">Home</a></li>
+                    <li><a class="mobile-nav-link" href="./students.html">Student</a></li>
+                    <li><a class="mobile-nav-link" href="./alumni.html">Alumni</a></li>
+                    <li><a class="mobile-nav-link" href="./employers.html">Employers</a></li>
+                    <li><a class="mobile-nav-link" href="./partners.html">Partners</a></li>
+                    <li><a class="mobile-nav-link" href="./mentorship.html">Mentorship</a></li>
+                    <li><a class="mobile-nav-link" href="./events.html">Events</a></li>
+                    <li><a class="mobile-nav-link" href="./resources.html">Resources</a></li>
+                    <li><a class="mobile-nav-link" href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+
+    <main>
+        <!-- ================= Hero (shared component) ================= -->
+        <section class="hero hero--compact">
+            <div class="hero__media">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2200&q=85"
+                    alt="" role="presentation">
+            </div>
+            <div class="container hero__content">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span class="breadcrumb__sep" aria-hidden="true">/</span>
+                    <span class="breadcrumb__current">Alumni</span>
+                </nav>
+
+                <h1 class="hero__title">Career Management Services <strong>for Alumni</strong></h1>
+                <p class="hero__subtitle">Explore valuable opportunities to advance your career, build meaningful
+                    professional connections, and support and inspire the next generation of students through
+                    mentorship and engagement.</p>
+
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#career-opportunities">Explore Career Opportunities</a>
+                    <a class="btn btn--ghost" href="#become-a-mentor">Become a Mentor</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Main content ================= -->
+        <section class="section">
+            <div class="container">
+
+                <!-- Career opportunities -->
+                <section class="alumni-block" id="career-opportunities">
+                    <p class="alumni-block__eyebrow">Advance, connect, give back</p>
+                    <h2 class="alumni-block__title">Explore Career Opportunities</h2>
+                    <p class="alumni-block__intro">Discover current employment opportunities and take the next step in
+                        your career. Register on the Career Portal to explore available positions and join our Mailing
+                        List to receive the latest vacancies.</p>
+
+                    <div class="alumni-block__actions">
+                        <a class="btn" href="#">Career Portal</a>
+                        <a class="cta-link" href="#stay-connected">Join our Mailing List →</a>
+                    </div>
+                </section>
+
+                <!-- Become a mentor -->
+                <section class="alumni-block" id="become-a-mentor">
+                    <div class="split">
+                        <figure class="media-frame split__media">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=85"
+                                alt="Alumnus mentoring a student">
+                        </figure>
+
+                        <div>
+                            <p class="alumni-block__eyebrow">Mentorship</p>
+                            <h2 class="alumni-block__title">Become a Mentor</h2>
+                            <p class="alumni-block__intro">Share your experience, insights, and career journey with
+                                current students. Join the OSB Graduate Mentorship Program to support the next
+                                generation, make a meaningful impact, and receive a recognition and a feature through
+                                the OSB Alumni “Career Journey”.</p>
+
+                            <div class="alumni-block__actions">
+                                <a class="btn" href="#">Mentor Form – Fill out form</a>
+                                <a class="cta-link" href="#">Learn More About OSB Graduate Mentorship Program →</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Share your story -->
+                <section class="alumni-block" id="share-your-story">
+                    <p class="alumni-block__eyebrow">Recognition</p>
+                    <h2 class="alumni-block__title">Share Your Story</h2>
+                    <p class="alumni-block__intro">Celebrate your achievements and inspire the next generation by
+                        sharing your professional journey with the OSB community. Submit your story to be featured in
+                        the OSB “Alumni Career Journey” or nominate a fellow alumnus whose accomplishments deserve to
+                        be recognized.</p>
+
+                    <div class="alumni-block__actions">
+                        <a class="btn" href="#">Alumni Success Story – Fill out form</a>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+
+        <!-- ================= Alumni Career Journey ================= -->
+        <section class="section section--muted" id="alumni-career-journey">
+            <div class="container">
+                <header class="section-heading">
+                    <h2 class="section-heading__title">Alumni Career Journey</h2>
+                    <p class="section-heading__intro">[Alumni Career Journey Introduction – TBC]</p>
+                </header>
+
+                <div class="journey-grid">
+                    <article class="journey-card">
+                        <div class="media-frame journey-card__media">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80"
+                                alt="Alumni portrait">
+                        </div>
+                        <div class="journey-card__body">
+                            <h3 class="journey-card__name">[Alumni Name]</h3>
+                            <p class="journey-card__role">[Job Title · Organization · Class Year]</p>
+                            <p class="journey-card__text">[Alumni Career Journey Story – TBC]</p>
+                            <a class="cta-link" href="#">Read the journey</a>
+                        </div>
+                    </article>
+
+                    <article class="journey-card">
+                        <div class="media-frame journey-card__media">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
+                                alt="Alumni portrait">
+                        </div>
+                        <div class="journey-card__body">
+                            <h3 class="journey-card__name">[Alumni Name]</h3>
+                            <p class="journey-card__role">[Job Title · Organization · Class Year]</p>
+                            <p class="journey-card__text">[Alumni Career Journey Story – TBC]</p>
+                            <a class="cta-link" href="#">Read the journey</a>
+                        </div>
+                    </article>
+
+                    <article class="journey-card">
+                        <div class="media-frame journey-card__media">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                                alt="Alumni portrait">
+                        </div>
+                        <div class="journey-card__body">
+                            <h3 class="journey-card__name">[Alumni Name]</h3>
+                            <p class="journey-card__role">[Job Title · Organization · Class Year]</p>
+                            <p class="journey-card__text">[Alumni Career Journey Story – TBC]</p>
+                            <a class="cta-link" href="#">Read the journey</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="journey-footer">
+                    <a class="cta-link" href="#share-your-story">Submit or nominate a story</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Outcomes ================= -->
+        <section class="section" id="outcomes">
+            <div class="container">
+                <header class="section-heading">
+                    <h2 class="section-heading__title">Where alumni go</h2>
+                    <p class="section-heading__intro">Alumni career outcomes</p>
+                </header>
+
+                <p class="text-lead" style="max-width:720px">[Alumni Outcomes Introduction – TBC]</p>
+
+                <div class="outcomes-grid" style="margin-top:36px">
+                    <div class="outcome">
+                        <p class="outcome__value">—</p>
+                        <p class="outcome__label">Industries</p>
+                        <p class="outcome__note">[Alumni Data – TBC]</p>
+                    </div>
+                    <div class="outcome">
+                        <p class="outcome__value">—</p>
+                        <p class="outcome__label">Companies</p>
+                        <p class="outcome__note">[Alumni Data – TBC]</p>
+                    </div>
+                    <div class="outcome">
+                        <p class="outcome__value">—</p>
+                        <p class="outcome__label">Roles</p>
+                        <p class="outcome__note">[Alumni Data – TBC]</p>
+                    </div>
+                    <div class="outcome">
+                        <p class="outcome__value">—</p>
+                        <p class="outcome__label">Locations</p>
+                        <p class="outcome__note">[Alumni Data – TBC]</p>
+                    </div>
+                </div>
+
+                <div class="chart-placeholder">
+                    <p class="chart-placeholder__title">[Alumni Career Paths Chart – TBC]</p>
+                    <p class="chart-placeholder__caption">Industries, companies, roles, career paths, locations</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Testimonials ================= -->
+        <section class="section section--muted" id="testimonials">
+            <div class="container">
+                <header class="section-heading">
+                    <h2 class="section-heading__title">In their words</h2>
+                    <p class="section-heading__intro">Alumni testimonials</p>
+                </header>
+
+                <div class="testimonial-list">
+                    <article class="testimonial">
+                        <figure class="media-frame testimonial__media">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
+                                alt="Alumni portrait">
+                        </figure>
+                        <div>
+                            <p class="testimonial__name">[Alumni Name]</p>
+                            <p class="testimonial__role">[Job Title · Organization]</p>
+                            <blockquote class="testimonial__quote">[Alumni Testimonial – TBC]</blockquote>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <figure class="media-frame testimonial__media">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80"
+                                alt="Alumni portrait">
+                        </figure>
+                        <div>
+                            <p class="testimonial__name">[Alumni Name]</p>
+                            <p class="testimonial__role">[Job Title · Organization]</p>
+                            <blockquote class="testimonial__quote">[Alumni Testimonial – TBC]</blockquote>
+                        </div>
+                    </article>
+
+                    <article class="testimonial">
+                        <figure class="media-frame testimonial__media">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80"
+                                alt="Alumni portrait">
+                        </figure>
+                        <div>
+                            <p class="testimonial__name">[Alumni Name]</p>
+                            <p class="testimonial__role">[Job Title · Organization]</p>
+                            <blockquote class="testimonial__quote">[Alumni Testimonial – TBC]</blockquote>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Support after graduation ================= -->
+        <section class="section" id="support-after-graduation">
+            <div class="container">
+                <header class="section-heading">
+                    <h2 class="section-heading__title">After graduation</h2>
+                    <p class="section-heading__intro">CMS support for alumni</p>
+                </header>
+
+                <p class="text-lead" style="max-width:720px">Alumni can continue to access career support and benefit
+                    from the OSB Graduate Mentorship Program. Contact us to learn more about the resources available to
+                    you.</p>
+
+                <h3 class="alumni-block__title" style="margin-top:44px;font-size:var(--fs-heading-md)">How alumni access
+                    CMS support after graduation</h3>
+                <p class="alumni-block__intro">[Access process – TBC]</p>
+
+                <div class="steps">
+                    <article class="step">
+                        <span class="step__index">i</span>
+                        <div>
+                            <h4 class="step__title">Career opportunities</h4>
+                            <p class="step__text">Career Portal and mailing list vacancies.</p>
+                        </div>
+                    </article>
+
+                    <article class="step">
+                        <span class="step__index">ii</span>
+                        <div>
+                            <h4 class="step__title">Mentorship</h4>
+                            <p class="step__text">Give back as a mentor in the OSB Graduate Mentorship Program.</p>
+                        </div>
+                    </article>
+
+                    <article class="step">
+                        <span class="step__index">iii</span>
+                        <div>
+                            <h4 class="step__title">Alumni Career Journey</h4>
+                            <p class="step__text">Share your story or nominate a fellow alumnus.</p>
+                        </div>
+                    </article>
+
+                    <article class="step">
+                        <span class="step__index">iv</span>
+                        <div>
+                            <h4 class="step__title">[Additional Alumni Service – TBC]</h4>
+                            <p class="step__text">[Description – TBC]</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= Final CTA ================= -->
+        <section class="section section--brand" id="stay-connected">
+            <div class="container final-cta">
+                <div>
+                    <p class="final-cta__eyebrow">Alumni?</p>
+                    <h2 class="final-cta__title">Advance your career and stay connected with the OSB community.</h2>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn--light" href="#career-opportunities">Explore Alumni Opportunities</a>
+                    <a class="btn btn--ghost" href="#become-a-mentor">Become a Mentor</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="https://liiwaa-osb.github.io/AUB-OSB-shared-components/footer-load-V.js"></script>
+    <!-- do not remove this comment -->
+    <!-- <script src="https://www.aub.edu.lb/osb/AUB_OSB_shared_components/footer-load-V.js"></script> -->
+</body>
+
+</html>
