@@ -1,0 +1,474 @@
+/* ==========================================================================
+   index.css — styles that only the home page uses
+   Depends on css/main.css (tokens + shared components)
+   ========================================================================== */
+
+/* 1. Hero
+   -------------------------------------------------------------------------- */
+.hero {
+    position: relative;
+    display: grid;
+    align-items: center;
+    min-height: max(560px, calc(82vh - var(--header-offset)));
+    padding-block: clamp(3.5rem, 6vw, 5.5rem);
+    overflow: hidden;
+    color: var(--color-white);
+    background-color: var(--color-ink);
+}
+
+.hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark overlay with a faint brand tint toward the panel side */
+.hero__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* .container supplies the width + centering; do NOT set width here.
+   (A previous `width: 100%` overrode the container's max-width.) */
+.hero__container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(2rem, 4vw, 4rem);
+}
+
+.hero__content {
+    flex: 1 1 auto;
+}
+
+.hero__title {
+    margin: 0 0 1.25rem;
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4.2vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.hero__subtitle {
+    margin: 0 0 2rem;
+    max-width: 54ch;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Rankings glass panel */
+.hero-rankings {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 340px;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: var(--radius-md);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.hero-rankings__item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.hero-rankings__item+.hero-rankings__item {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-rankings__number {
+    flex-shrink: 0;
+    min-width: 3.4rem;
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.hero-rankings__text h3 {
+    margin: 0 0 0.25rem;
+    font-size: 0.92rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.hero-rankings__text p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+/* The page's single orchestrated motion: hero content settles in once */
+@keyframes hero-rise {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.hero__title,
+.hero__subtitle,
+.hero__content .cluster,
+.hero-rankings {
+    animation: hero-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.hero__subtitle {
+    animation-delay: 0.1s;
+}
+
+.hero__content .cluster {
+    animation-delay: 0.2s;
+}
+
+.hero-rankings {
+    animation-delay: 0.3s;
+}
+
+/* 2. Get to Know CMS
+   -------------------------------------------------------------------------- */
+.about__visual {
+    position: relative;
+    padding: 0 2.5rem 3rem 0;
+}
+
+.about__photo {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-muted);
+}
+
+.about__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about__photo--main {
+    aspect-ratio: 4 / 4.4;
+    box-shadow: var(--shadow-lift);
+}
+
+.about__photo--accent {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 46%;
+    aspect-ratio: 1;
+    border: 6px solid var(--color-white);
+    box-shadow: var(--shadow-lift);
+}
+
+.about__badge {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 17rem;
+    padding: 0.85rem 1.1rem;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lift);
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.about__badge svg {
+    flex-shrink: 0;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background: var(--color-primary-tint);
+    color: var(--color-primary);
+}
+
+.about__content .about__lead {
+    font-size: 1.15rem;
+    color: var(--color-ink);
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-block: 1.75rem 2rem;
+    padding: 0;
+    list-style: none;
+}
+
+.service-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.93rem;
+    font-weight: 500;
+    line-height: 1.35;
+    transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.service-list li:hover {
+    box-shadow: var(--shadow-lift);
+}
+
+.service-list svg {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    padding: 0.4rem;
+    color: var(--color-primary);
+}
+
+/* 3. Career move (numbered pillars)
+   -------------------------------------------------------------------------- */
+.career__intro {
+    position: sticky;
+    top: calc(var(--header-offset) + 1.5rem);
+}
+
+.career__intro h2 {
+    max-width: 18ch;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2rem, 3.6vw, 2.9rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+/* the sentence requested beneath the paragraph */
+.career__intro .career__statement {
+    margin-top: 1.5rem;
+    padding-left: 1.1rem;
+    border-left: 3px solid var(--color-primary);
+    color: var(--color-ink);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* 4. Audience cards
+   -------------------------------------------------------------------------- */
+.audience-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: border-color var(--transition-fast), transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.audience-card:hover,
+.audience-card:focus-visible {
+    border-color: var(--color-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lift);
+}
+
+.audience-card__media {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.audience-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.audience-card:hover .audience-card__media img {
+    transform: scale(1.06);
+}
+
+.audience-card__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.35rem;
+}
+
+.audience-card__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.audience-card__text {
+    flex: 1;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.cta-link {
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cta-link span {
+    display: inline-block;
+    transition: transform var(--transition-fast);
+}
+
+.audience-card:hover .cta-link span {
+    transform: translateX(4px);
+}
+
+/* 5. Student stories
+   -------------------------------------------------------------------------- */
+.story-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 3.25rem 2rem 2rem;
+    overflow: hidden;
+}
+
+.story-card::before {
+    content: "\201C";
+    position: absolute;
+    top: 0;
+    right: 1.25rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--color-primary);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.story-card__quote {
+    position: relative;
+    color: var(--color-text-muted);
+    font-size: 1.02rem;
+    line-height: 1.75;
+}
+
+.story-card__author {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: auto;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.story-card__avatar {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.story-card__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.story-card__role {
+    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* 6. Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .hero__container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-rankings {
+        max-width: 100%;
+    }
+
+    .career__intro {
+        position: static;
+    }
+
+    .about__visual {
+        max-width: 34rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .service-list {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about__visual {
+        padding-right: 1rem;
+    }
+
+    .about__badge {
+        position: static;
+        margin: 1rem 0 0 1.25rem;
+        max-width: 260px;
+    }
+
+    .about__photo--accent {
+        width: 40%;
+        bottom: 4.5rem;
+    }
+
+    .story-card {
+        padding: 3.5rem 1.4rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .about__badge {
+        margin-top: 3rem;
+    }
+
+    .about__photo--accent {
+        bottom: 7.5rem;
+    }
+}
